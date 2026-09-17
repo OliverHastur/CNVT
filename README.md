@@ -34,6 +34,7 @@
   4. Em source, selecione a branch correspondente e a oasta /root, depois clique em save
 
 ## Estrutura do projeto
+  ```
   ├── index.html             # estrutura das coisas
   ├── css/
   │    └── style.css         # Parte visual
@@ -41,3 +42,4 @@
   │    ├── data.js           # Cardápio de experiências
   │    └── app.js            # Lógica
   └── README.md
+  ```
