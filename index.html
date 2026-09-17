@@ -24,26 +24,129 @@
   <!--Início Barra de progresso -->
   <nav class="progress" aria-label="progresso">
     <span class="dot" data-step="welcome"></span>
-    <span class="dot" data-step="Mood"></span>
+    <span class="dot" data-step="thermometer"></span>
     <span class="dot" data-step="Menu"></span>
     <span class="dot" data-step="Calendar"></span>
     <span class="dot" data-step="confirm"></span>
   </nav>
   <!--Fim Barra de progresso -->
 
-
   <!--Início Main -->
+  <main class="card-frame">
+
+    <!--Início Boas vindas -->
+    <section class="screen" id="screen-welcome" data-screen="welcome">
+      <p class="eyebrow-free">Antes de começar</p>
+      <h1>Oi. Preparei uma coisa<br>pra te convidar pra sair.</h1>
+      <p class="lede">Antes de tudo, me conta uma coisa rapidinho:</p>
+      
+      <!--Início restrições alimentares -->
+      <label class="field-label" for="dietary-notes">o que você não quer ou não pode comer?</label>
+      <div class="chip-row" id="dietary-chips">
+        <button type="button" class="chip" data-value="vegan">Sou vegan</button>
+        <button type="button" class="chip" data-value="vegetariana">Sou Vegetariana</button>
+        <button type="button" class="chip" data-value="lactose">Sou intolerante a lactose</button>
+        <button type="button" class="chip" data-value="gluten">Não posso comer glúten</button>
+        <button type="button" class="chip" data-value="mar">Alérgica a frutos do mar</button>
+        <button type="button" class="chip" data-value="porco">Não como carne de Porco</button>
+        <button type="button" class="chip" data-value="amendoim">Alérgica a amendoím e nozes</button>
+      </div>
+      <textarea id="dietary-notes" rows="2" placeholder="Quer contar mais alguma coisa? (Opcional)"></textarea>
+
+      <button class="btn-primary" id="btn-to-thermometer">Continuar</button>
+      <!--Fim restrições alimentares -->
+
+    </section>
+    <!--Fim Boas vindas -->
+
+    <!--Início Mood -->
+    <section class="screen" id="screen-thermometer" data-screen="thermometer">
+      <p class="eyebrow-free">Uma pergunta rápida</p>
+      <h2 id="thermometer-question">Como está sua vibe atualmente:</h2>
+      <div class="vibe-options" id="vibe-options"></div>
+      <button class="btn-ghost" id="btn-skip-thermometer">Prefiro ver tudo</button>
+    </section> 
+    <!--Fim Mood -->
+
+    <!--Início Experiências -->
+    <section class="screen" id="screen-menu" data-screen="menu">
+      <p class="eyebrow-free">O cardápio atual</p>
+      <h2>Escolha o que combina mais com você</h2>
+      <p class="lede">Pode marcar mais de uma se estiver em dúvida.</p>
+
+      <div class="cards-grid" id="cards-grid"></div>
+
+      <div class="tie-break" id="tie-break" hidden>
+        <button class="btn-secondary" id="btn-tie-break">🎡 Deixe o destino decidir</button>
+      </div>
+
+      <button class="btn-link" id="btn-to-blank">Nenhuma dessas, prefiro sugerir algo -></button>
+
+      <button class="btn-primary" id="btn-menu-continue" disabled>Continuar</button>
+    </section>
+    <!--Fim Experiências -->
+
+    <!--Início Whitebox -->
+    <section class="screen" id="screen-blank" data-screen="blank">
+      <p class="eyebrow-free">Sua ideia</p>
+      <h2>Pensou em outra coisa?</h2>
+      <p class="lede">Me diz aqui o que você quer fazer.</p>
+      <textarea id="custom-idea" rows="4" placeholder="Ex: só queria sentar num lugar tranquilo e conversar..."></textarea>
+      <button class="btn-primary" id="btn-blank-continue">Continuar</button>
+      <button class="btn-link" id="btn-back-to-menu">← Voltar pro cardápio</button>
+    </section>
+    <!--Fim Whitebox -->
+
+    <!--Início Calendário -->
+    <section class="screen" id="screen-calendar" data-screen="calendar">
+      <p class="eyebrow-free">Só mais uma coisa</p>
+      <h2>Qual fim de semana funciona pra você?</h2>
+      <p class="lede">Escolha o dia que ficar melhor. Se nenhum servir, sem problema.</p>
+
+      <div class="weekend-list" id="weekend-list"></div>
+
+      <button class="btn-ghost" id="btn-skip-calendar">Nenhum desses funciona, combinamos depois</button>
+      <button class="btn-primary" id="btn-calendar-continue" disabled>Continuar</button>
+      <button class="btn-link" id="btn-calendar-back">← Voltar</button>
+    </section>
+    <!--Fim Calendário -->
+
+    <!--Início Roleta -->
+      <div class="roulette-overlay" id="roulette-overlay" hidden>
+        <div class="roulette-box">
+        <div class="roulette-wheel" id="roulette-wheel">🎲</div>
+        <p id="roulette-status">Girando o destino...</p>
+        </div>
+      </div>
+    <!--Fim Roleta -->
+
+    <!--Início Confirmação -->
+    <section class="screen" id="screen-confirm" data-screen="confirm">
+      <p class="eyebrow-free">Última etapa</p>
+      <h2>Confirma pra mim?</h2>
+      <div class="summary-box" id="summary-box"></div>
+      <button class="btn-primary" id="btn-send">Enviar escolha</button>
+      <button class="btn-link" id="btn-edit">← Quero mudar algo</button>
+    </section>
+    <!--Fim Confirmação -->
+
+    <!--Início Tela final -->
+    <section class="screen" id="screen-done" data-screen="done">
+      <div class="done-icon">🕯️</div>
+      <h2>Pedido anotado!</h2>
+      <p class="lede">Aguarde as próximas instruções. Já estou planejando tudo. 💌</p>
+    </section>
+    <!--Fim Tela final -->
+
+  </main>
   <!--Fim Main -->
 
-
-
-
 </div>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+
 </body>
 <!--Fim Corpo -->
-
-
-
-
 
 </html>
