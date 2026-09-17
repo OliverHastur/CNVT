@@ -93,7 +93,7 @@ const EXPERIENCES = [
   {
     id: "Parque",
     title: "Passeio no parque (tenho medo de roda gigante)",
-    description: "Passaporte completo para o parque.",
+    description: "Passaporte completo para o parque que você quiser.",
     emoji: "🎡",
     vibe: "explorar",
     isMystery: false,
